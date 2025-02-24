@@ -1,0 +1,409 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    position: relative;
+    min-height: 100vh; /* Đảm bảo body chiếm toàn bộ chiều cao màn hình */
+}
+
+header {
+    background-color: #e0f7fa; /* Giữ nguyên màu nền xanh nhạt của header */
+    padding: 20px;
+    text-align: center; /* Giữ nguyên căn giữa toàn bộ nội dung header */
+    position: relative;
+    z-index: 10;
+}
+
+.header-top {
+    display: flex; /* Sử dụng flexbox để điều chỉnh vị trí logo */
+    justify-content: center; /* Giữ căn giữa toàn bộ nội dung */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.logo {
+    max-width: 100px;
+    margin-right: 30px; /* Khoảng cách hợp lý giữa logo và văn bản */
+    margin-bottom: 0; /* Loại bỏ margin dưới để logo không cách xa nội dung */
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin: 0;
+}
+
+p {
+    color: #666;
+    margin: 5px 0;
+}
+
+.menu {
+    background-color: #ffd700;
+    padding: 15px; /* Tăng padding để menu trông rộng rãi hơn */
+    margin-top: 15px; /* Tăng khoảng cách giữa header-top và menu */
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Thêm bóng nhẹ để menu nổi bật */
+}
+
+.menu-item {
+    color: #333;
+    text-decoration: none;
+    margin: 5px 10px; /* Tăng khoảng cách giữa các mục menu */
+    padding: 10px 20px; /* Tăng padding để nút lớn hơn, dễ nhấn */
+    border-radius: 25px; /* Tăng bán kính bo góc cho nút tròn hơn */
+    display: inline-block;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Thêm transition cho background-color */
+    font-weight: bold; /* Làm chữ đậm hơn để nổi bật */
+    font-size: 16px; /* Tăng kích thước chữ để dễ đọc hơn */
+}
+
+.menu-item:hover {
+    transform: scale(1.1); /* Hiệu ứng nảy lên khi rê chuột */
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Thêm bóng khi hover để nổi bật hơn */
+}
+
+/* Màu riêng cho từng nút menu */
+.menu-item:nth-child(1) { /* Trang chủ */
+    background-color: #ff6347; /* Màu đỏ tươi */
+}
+.menu-item:nth-child(2) { /* Lớp Học Của Bé */
+    background-color: #4682b4; /* Màu xanh dương thép */
+}
+.menu-item:nth-child(3) { /* Góc Phụ Huynh */
+    background-color: #32cd32; /* Màu xanh lá cây tươi */
+}
+.menu-item:nth-child(4) { /* Tuyển Sinh */
+    background-color: #ff4500; /* Màu cam đậm */
+}
+.menu-item:nth-child(5) { /* Thư Viện */
+    background-color: #9370db; /* Màu tím nhạt */
+}
+.menu-item:nth-child(6) { /* Thư Viện Ảnh */
+    background-color: #FFA500; /* Màu cam */
+}
+
+/* Hiệu ứng hover cho từng nút giữ nguyên màu nền nhưng làm đậm hơn */
+.menu-item:nth-child(1):hover { background-color: #e41b17; }
+.menu-item:nth-child(2):hover { background-color: #4169e1; }
+.menu-item:nth-child(3):hover { background-color: #228b22; }
+.menu-item:nth-child(4):hover { background-color: #ff3300; }
+.menu-item:nth-child(5):hover { background-color: #7b68ee; }
+.menu-item:nth-child(6):hover { background-color: #ff8c00; }
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    position: relative;
+    z-index: 5;
+    flex: 1; /* Giúp main chiếm phần còn lại của chiều cao */
+}
+
+.sidebar {
+    width: 25%;
+    background-color: #f0fff0;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.notification, .menu-item {
+    background-color: #98fb98;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.fixed {
+    position: fixed;
+    z-index: 100;
+}
+
+.notification.fixed {
+    top: 20px;
+    left: 20px;
+    width: 20%;
+}
+
+.menu-item.fixed {
+    top: 480px; /* Điều chỉnh vị trí để tránh chồng lấn với các khung thông báo mới */
+    left: 20px;
+    width: 20%;
+}
+
+.content {
+    width: 70%;
+    margin-left: 25%; /* Đẩy nội dung sang phải để tránh sidebar cố định */
+}
+
+.image-slider {
+    width: 100%;
+    max-width: 600px; /* Kích thước tối đa cố định cho khung hình trên máy tính */
+    height: auto; /* Tự động điều chỉnh chiều cao dựa trên tỷ lệ hình ảnh */
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 3 / 2; /* Tỷ lệ khung hình 3:2 để tối ưu hóa hiển thị */
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Khoảng cách giữa các bài viết */
+    margin-bottom: 20px;
+}
+
+.post {
+    background-color: #f0f8ff; /* Màu nền nhẹ cho bài viết */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Thêm bóng nhẹ cho bài viết */
+}
+
+.post h3 {
+    color: #333;
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.post p {
+    color: #666;
+    margin: 0;
+    font-size: 14px;
+}
+
+.event-section {
+    display: flex;
+    justify-content: space-between; /* Sắp xếp ngang phần chào mừng và thực đơn */
+    gap: 20px; /* Khoảng cách giữa hai phần */
+    margin-bottom: 20px;
+}
+
+.event-item {
+    flex: 1; /* Mỗi phần chiếm 50% chiều rộng */
+    background-color: #ff6347;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    min-height: 100px; /* Đảm bảo chiều cao tối thiểu để cân đối */
+}
+
+.event-item.welcome h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.event-item.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.menu-link:hover {
+    text-decoration: underline; /* Thêm gạch chân khi hover để nhấn mạnh liên kết */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px; /* Tăng padding để footer trông cân đối hơn */
+    position: relative; /* Giữ footer nằm dưới cùng tự nhiên */
+    width: 100%;
+    z-index: 1;
+    margin-bottom: 0; /* Đảm bảo footer không bị cách xa dưới cùng */
+}
+
+.facebook-widget {
+    position: fixed;
+    bottom: 20px; /* Đặt ở góc dưới cùng bên trái, cách footer 20px */
+    left: 20px; /* Đặt ở góc trái, cách mép trái 20px */
+    width: 340px;
+    height: 500px;
+    z-index: 100;
+    border: none;
+    overflow: hidden;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+
+    .header-top {
+        flex-direction: column; /* Logo và văn bản xếp dọc trên điện thoại */
+        align-items: center;
+    }
+
+    .logo {
+        margin-right: 0; /* Loại bỏ khoảng cách bên phải trên điện thoại */
+        margin-bottom: 10px; /* Thêm khoảng cách dưới để logo không dính vào văn bản */
+    }
+
+    .header-top h1 {
+        font-size: 18px;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px; /* Giảm padding trên điện thoại để tiết kiệm không gian */
+    }
+
+    .menu-item {
+        margin: 5px 0;
+        width: 80%;
+        padding: 8px 16px; /* Giảm padding trên điện thoại để nút nhỏ hơn, phù hợp màn hình */
+        font-size: 14px; /* Giảm kích thước chữ trên điện thoại */
+    }
+
+    main {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .notification.fixed, .menu-item.fixed {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .content {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .image-slider {
+        max-width: 100%;
+        aspect-ratio: 16 / 9; /* Tỷ lệ 16:9 cho điện thoại để tối ưu hơn */
+        height: auto;
+    }
+
+    .posts {
+        gap: 15px; /* Giảm khoảng cách giữa các bài viết trên điện thoại */
+    }
+
+    .post {
+        padding: 10px; /* Giảm padding của bài viết trên điện thoại */
+    }
+
+    .post h3 {
+        font-size: 16px; /* Giảm kích thước tiêu đề bài viết trên điện thoại */
+    }
+
+    .post p {
+        font-size: 12px; /* Giảm kích thước nội dung bài viết trên điện thoại */
+    }
+
+    .event-section {
+        flex-direction: column; /* Chuyển sang bố cục dọc trên điện thoại */
+        gap: 15px; /* Giảm khoảng cách giữa hai phần trên điện thoại */
+    }
+
+    .event-item {
+        flex: auto; /* Mỗi phần chiếm toàn bộ chiều rộng trên điện thoại */
+        min-height: auto; /* Loại bỏ chiều cao tối thiểu trên điện thoại */
+        padding: 15px; /* Giảm padding trên điện thoại */
+    }
+
+    .event-item.welcome h2 {
+        font-size: 16px; /* Giảm kích thước tiêu đề trên điện thoại */
+    }
+
+    .menu-link {
+        font-size: 14px; /* Giảm kích thước liên kết trên điện thoại */
+    }
+
+    .facebook-widget {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        width: 100%;
+        margin-top: 20px; /* Đặt Facebook ngay trên footer trên điện thoại */
+        height: 400px;
+    }
+
+    footer {
+        position: relative;
+        width: 100%;
+        padding: 10px; /* Giảm padding trên điện thoại để tiết kiệm không gian */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .image-slider {
+        aspect-ratio: 16 / 9; /* Giữ tỷ lệ 16:9 cho điện thoại nhỏ */
+        height: auto;
+    }
+
+    .facebook-widget {
+        height: 300px;
+    }
+
+    .menu-item {
+        padding: 6px 12px; /* Giảm padding thêm trên điện thoại nhỏ */
+        font-size: 12px; /* Giảm kích thước chữ thêm trên điện thoại nhỏ */
+    }
+
+    .posts {
+        gap: 10px; /* Giảm khoảng cách giữa các bài viết trên điện thoại nhỏ */
+    }
+
+    .post {
+        padding: 8px; /* Giảm padding thêm của bài viết trên điện thoại nhỏ */
+    }
+
+    .post h3 {
+        font-size: 14px; /* Giảm kích thước tiêu đề bài viết thêm trên điện thoại nhỏ */
+    }
+
+    .post p {
+        font-size: 10px; /* Giảm kích thước nội dung bài viết thêm trên điện thoại nhỏ */
+    }
+
+    .event-item {
+        padding: 12px; /* Giảm padding thêm của event-item trên điện thoại nhỏ */
+    }
+
+    .event-item.welcome h2 {
+        font-size: 14px; /* Giảm kích thước tiêu đề thêm trên điện thoại nhỏ */
+    }
+
+    .menu-link {
+        font-size: 12px; /* Giảm kích thước liên kết thêm trên điện thoại nhỏ */
+    }
+
+    footer {
+        padding: 8px; /* Giảm padding thêm trên điện thoại nhỏ */
+    }
+}
