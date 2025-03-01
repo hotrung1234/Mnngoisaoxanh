@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trường Mầm Non Tươi Hoa</title>
+    <meta name="description" content="Website chính thức của Trường Mầm Non Ngôi Sao Xanh, Quận Thanh Khê">
+    <title>Trường Mầm Non Ngôi Sao Xanh</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="header-top">
+        <div class="header-container">
             <img src="logo.png" alt="Logo Ủy Ban Nhân Dân Quận Thanh Khê" class="logo">
-            <h1>Ủy Ban Nhân Dân Quận Thanh Khê<br>Trường Mầm Non Tươi Hoa</h1>
-            <p>Điện thoại: 0794947472<br>Email: mamnontruonghoa2283@gmail.com</p>
+            <div class="header-text">
+                <h1>ỦY BAN NHÂN DÂN QUẬN THANH KHÊ</h1>
+                <h2>Trường Mầm Non Ngôi Sao Xanh</h2>
+                <p>122 Huỳnh Ngọc Huệ, Q. Thanh Khê, Đà Nẵng<br>Điện thoại: 0236727466 | Email: <a href="mailto:ngoisaoxanh114@gmail.com">ngoisaoxanh114@gmail.com</a></p>
+            </div>
         </div>
         <nav class="menu">
             <a href="#" class="menu-item">Trang chủ</a>
@@ -24,45 +28,86 @@
     </header>
 
     <main>
-        <section class="sidebar">
-            <div class="notification fixed">
-                <h3>Thông Báo</h3>
-                <p>Thông Báo về việc đăng ký<br>Cấp thẻ Căn cước công dân<br>Dành cho các song ngữ tại trường Mầm<br>Non Tươi Hoa</p>
+        <aside class="sidebar">
+            <div class="notification">
+                <h3>Thông Báo Cho Bé</h3>
+                <ul>
+                    <li>Ngày hội Bé Vui Chơi: 05/03/2025</li>
+                    <li>Giờ kể chuyện: 10/03/2025</li>
+                    <li>Bé học làm bánh: 15/03/2025</li>
+                </ul>
             </div>
-            <div class="notification fixed">
-                <h3>Hoạt động tại trường</h3>
-                <p>- Ngày hội Gia đình: 15/03/2025<br>- Lễ hội Trung thu: 10/09/2025<br>- Ngày hội Thể thao: 20/05/2025</p>
+            <div class="notification">
+                <h3>Thông Báo Cho Phụ Huynh</h3>
+                <ul>
+                    <li>Họp phụ huynh: 08/03/2025</li>
+                    <li>Đăng ký hè 2025: 20/03/2025</li>
+                    <li>Hội thảo dinh dưỡng: 25/03/2025</li>
+                </ul>
             </div>
-            <div class="notification fixed">
-                <h3>Sự kiện đặc biệt</h3>
-                <p>- Chào mừng Ngày Nhà giáo Việt Nam: 20/11/2025<br>- Hội thảo Phụ huynh: 25/04/2025</p>
+            <div class="notification">
+                <h3>Thông Báo Chung</h3>
+                <p>Đăng ký cấp thẻ Căn cước công dân cho các bé song ngữ tại trường.</p>
             </div>
-            <div class="notification fixed">
-                <h3>Bài viết trong tương lai</h3>
-                <p>- Kế hoạch học tập kỳ hè 2026: 01/06/2026<br>- Lễ khai giảng năm học mới 2026: 05/09/2026<br>- Ngày hội Văn hóa học đường: 15/10/2026</p>
+            <div class="notification">
+                <h3>Hoạt Động Tại Trường</h3>
+                <ul>
+                    <li>Ngày hội Gia đình: 15/03/2025</li>
+                    <li>Lễ hội Trung thu: 10/09/2025</li>
+                    <li>Ngày hội Thể thao: 20/05/2025</li>
+                </ul>
             </div>
-            <div class="menu-item fixed">
-                <h3>Bản Đồ</h3>
+            <div class="notification">
+                <h3>Sự Kiện Đặc Biệt</h3>
+                <ul>
+                    <li>Ngày Nhà giáo Việt Nam: 20/11/2025</li>
+                    <li>Hội thảo Phụ huynh: 25/04/2025</li>
+                </ul>
             </div>
-        </section>
+        </aside>
 
         <section class="content">
             <div class="image-slider">
-                <img src="school-image1.jpg" alt="Hình ảnh trường mầm non" class="main-image">
+                <button class="slider-button prev">&lt;</button>
+                <img src="image1.jpg" alt="Hình ảnh trường mầm non" class="main-image">
+                <img src="image2.jpg" alt="Hình ảnh trường mầm non" class="main-image" style="display: none;">
+                <img src="image3.jpg" alt="Hình ảnh trường mầm non" class="main-image" style="display: none;">
+                <button class="slider-button next">&gt;</button>
+            </div>
+            <div class="post-titles">
+                <h2>Tin Tức Nổi Bật</h2>
+                <div class="post-title-container">
+                    <article class="post-title-item">
+                        <span class="post-date">10/02/2025</span>
+                        <a href="#">Góc học tập sáng tạo cho các bé</a>
+                    </article>
+                    <article class="post-title-item">
+                        <span class="post-date">25/05/2025</span>
+                        <a href="#">Ngày hội thể thao vui nhộn tại trường</a>
+                    </article>
+                    <article class="post-title-item">
+                        <span class="post-date">15/03/2025</span>
+                        <a href="#">Ngày hội Gia đình - Kết nối yêu thương</a>
+                    </article>
+                    <article class="post-title-item">
+                        <span class="post-date">20/11/2025</span>
+                        <a href="#">Chào mừng Ngày Nhà giáo Việt Nam</a>
+                    </article>
+                </div>
             </div>
             <div class="posts">
-                <div class="post">
-                    <h3>Bài viết 1: Góc học tập sáng tạo</h3>
-                    <p>Trường Mầm Non Tươi Hoa tổ chức không gian học tập sáng tạo cho các bé vào ngày 10/03/2025. Các bé sẽ tham gia vẽ tranh, làm đồ thủ công và chơi các trò chơi giáo dục.</p>
-                </div>
-                <div class="post">
-                    <h3>Bài viết 2: Ngày hội thể thao vui nhộn</h3>
-                    <p>Ngày hội thể thao dành cho các bé sẽ diễn ra vào 25/05/2025, với các hoạt động chạy đua, nhảy bao bố và thi kéo co, tạo không khí vui tươi cho toàn trường.</p>
-                </div>
+                <article class="post">
+                    <h3>Góc học tập sáng tạo</h3>
+                    <p>Ngày 10/02/2025, các bé tham gia vẽ tranh, làm đồ thủ công và chơi trò chơi giáo dục.</p>
+                </article>
+                <article class="post">
+                    <h3>Ngày hội thể thao vui nhộn</h3>
+                    <p>Ngày 25/05/2025, các bé tham gia chạy đua, nhảy bao bố và thi kéo co, tạo không khí vui tươi.</p>
+                </article>
             </div>
             <div class="event-section">
                 <div class="event-item welcome">
-                    <h2>Chào Mừng Đoàn Giáo Sinh Thực Tập Sư Phạm<br>Hè Chinh Quy Năm 2025</h2>
+                    <h2>Chào Mừng Đoàn Giáo Sinh<br>Hè Chính Quy 2025</h2>
                 </div>
                 <div class="event-item menu">
                     <a href="menu.html" class="menu-link">Thực đơn tuần 3 tháng 02-2025</a>
@@ -72,12 +117,8 @@
     </main>
 
     <footer>
-        <p>© 2025 Trường Mầm Non Tươi Hoa. All rights reserved.</p>
+        <p>© 2025 Trường Mầm Non Ngôi Sao Xanh. All rights reserved.</p>
     </footer>
-
-    <div class="facebook-widget fixed">
-        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F103755418223477&tabs&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-    </div>
 
     <script src="script.js"></script>
 </body>
