@@ -2,16 +2,25 @@
 const images = [
     'image1.jpg',
     'image2.jpg',
-    'image3.jpg'
+    'image3.jpg',
+    'image4.jpg',
+    'image5.jpg',
 ];
 let currentImageIndex = 0;
 const imageElements = document.querySelectorAll('.main-image');
+const dots = document.querySelectorAll('.dot');
 
 function showImage(index) {
     imageElements.forEach((img, i) => {
         img.classList.remove('active');
         if (i === index) {
             img.classList.add('active');
+        }
+    });
+    dots.forEach((dot, i) => {
+        dot.classList.remove('active');
+        if (i === index) {
+            dot.classList.add('active');
         }
     });
     currentImageIndex = index;
@@ -46,6 +55,14 @@ menuItems.forEach(item => {
 // Thêm sự kiện cho nút bấm slider
 document.querySelector('.prev').addEventListener('click', () => changeImage(-1));
 document.querySelector('.next').addEventListener('click', () => changeImage(1));
+
+// Thêm sự kiện cho các nút dot
+dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+        const index = parseInt(dot.getAttribute('data-index'));
+        showImage(index);
+    });
+});
 
 // Khởi tạo hình ảnh đầu tiên
 showImage(currentImageIndex);

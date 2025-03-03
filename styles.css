@@ -24,8 +24,8 @@ header {
     align-items: flex-start;
     gap: 1rem;
     flex-wrap: wrap;
-    background-image: url('header-background.jpg'); /* Thay 'path-to-your-image.jpg' bằng đường dẫn thực tế đến hình ảnh bạn đã cung cấp */
-    background-size: 100% auto; /* Hiển thị toàn bộ chiều rộng, chiều cao tự động điều chỉnh */
+    background-image: url('header-background.jpg');
+    background-size: 100% auto;
     background-position: center;
     background-repeat: no-repeat;
     padding: 2rem;
@@ -227,6 +227,34 @@ main {
 
 .next {
     right: 1rem;
+}
+
+/* Slider Dots */
+.slider-dots {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+    z-index: 2;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.dot:hover {
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 /* Post Titles */
