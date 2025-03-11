@@ -25,11 +25,12 @@ header {
     gap: 1rem;
     flex-wrap: wrap;
     background-image: url('header-background.jpg');
-    background-size: 100% auto;
+    background-size: cover; /* Thay đổi từ 100% auto sang cover */
     background-position: center;
     background-repeat: no-repeat;
     padding: 2rem;
     border-radius: 5px;
+    min-height: 150px; /* Thêm chiều cao tối thiểu */
 }
 
 .logo {
@@ -332,11 +333,12 @@ main {
     font-size: 0.9rem;
 }
 
-/* Event Section */
+//* Event Section */
 .event-section {
     display: flex;
     gap: 1rem;
     margin-bottom: 1.5rem;
+    min-height: 100px; /* Đảm bảo chiều cao tối thiểu */
 }
 
 .event-item {
@@ -349,21 +351,33 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100px; /* Chiều cao cố định */
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
+}
+
+.event-item.welcome {
+    /* Đảm bảo không có CSS riêng làm thay đổi kích thước */
 }
 
 .event-item.welcome h2 {
     font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+.event-item.menu {
+    /* Đảm bảo không có CSS riêng làm thay đổi kích thước */
 }
 
 .menu-link {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1rem;
-}
-
-.menu-link:hover {
-    text-decoration: underline;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
 }
 
 /* Footer */
@@ -456,5 +470,18 @@ footer {
 
     .menu-link {
         font-size: 0.9rem;
+    }
+}
+    @media (max-width: 768px) {
+    .header-container {
+        min-height: 180px; /* Tăng chiều cao tối thiểu cho màn hình nhỏ hơn */
+        padding: 1.5rem;
+    }
+}
+
+    @media (max-width: 480px) {
+    .header-container {
+        min-height: 200px; /* Tăng thêm chiều cao tối thiểu cho màn hình rất nhỏ */
+        padding: 1rem;
     }
 }
